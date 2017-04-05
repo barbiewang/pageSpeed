@@ -497,6 +497,7 @@ function logAverageFrame(times) {   // times参数是updatePositions()由User Ti
 function updatePositions() {
   frame++;
   window.performance.mark("mark_start_frame");
+  //将变量从循环中取出，避免强制布局
   var sTop = document.body.scollTop;
 
   var items = document.querySelectorAll('.mover');
