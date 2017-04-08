@@ -444,16 +444,37 @@ var resizePizzas = function(size) {
     return dx;
   }
 
+  function changePizzaSize(size){
+    switch(size){
+      case "1":
+        newWidth = 25;   //先定义好pizza的宽度
+            break;
+      case "2":
+        newWidth = 33.33;
+            break;
+      case "3":
+        newWidth = 50;
+            break;
+      default:
+        alert("bug in size switcher")
+    }
+    var randomPizzaContainers = document.querySelectorAll(".randomPizzaContainer");
+    for(var i = 0;i< randomPizzaContainers.length;i++){
+      randomPizzaContainers[i].style.width = newWidth + "%"; //遍历披萨的原色，将设定好的宽度直接赋值给披萨，避免强制布局。
+    }
+  }
+
   // 遍历披萨的元素并改变它们的宽度
-  function changePizzaSizes(size) {
+ /* function changePizzaSizes(size) {
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
       var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
+      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px'; //该步导致强制布局；
       document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
     }
   }
 
   changePizzaSizes(size);
+  */
 
   // User Timing API 太棒了
   window.performance.mark("mark_end_resize");
