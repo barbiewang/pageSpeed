@@ -443,7 +443,7 @@ var resizePizzas = function(size) {
 
     return dx;
   }
-/*
+
   function changePizzaSize(size){
     switch(size){
       case "1":
@@ -463,8 +463,9 @@ var resizePizzas = function(size) {
       randomPizzaContainers[i].style.width = newWidth + "%"; //遍历披萨的原色，将设定好的宽度直接赋值给披萨，避免强制回流。
     }
   }
-*/
+
   // 遍历披萨的元素并改变它们的宽度
+ /*
   function changePizzaSizes(size) {
     for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
       var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
@@ -474,7 +475,7 @@ var resizePizzas = function(size) {
   }
 
   changePizzaSizes(size);
-
+*/
 
   // User Timing API 太棒了
   window.performance.mark("mark_end_resize");
